@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <button id="버튼02">버튼02</button>
+    </div>
+    <script>
+        // arrow function은 this값을 함수 밖에 있던거 그대로 쓴다
+        var 함수 = a => a + 10;
+    
+        [1,2,3,4].forEach( a => console.log(a) );
+
+        document.getElementById('버튼02').addEventListener('click', 
+            // e => console.log(this),
+            e => console.log(e.currentTarget)
+
+        );
+
+        var 오브젝트 = {
+            함수 : () => {
+                return this
+            }
+        }
+
+        오브젝트.함수();
+    </script>
+</body>
+</html>
