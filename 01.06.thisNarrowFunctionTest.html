@@ -14,7 +14,7 @@
         var 사람 = {
             name : "손흥민",
             sayHi : function sayHi() {
-                console.log("안녕 나는 " + 사람.name);
+                console.log("안녕 나는 " + this.name);
             } 
         }
 
@@ -52,7 +52,15 @@
 
         // 3. setTimeout 이용해보기
         document.getElementById('버튼').addEventListener('click', function(){
+            // 변수에 담아서 출력도 가능함~
+            // let a = console.log(this.innerHTML);
+            // a;
             setTimeout(()=>{console.log(this.innerHTML)}, 1000);
+        });
+
+        // 3. setTimeout 이용해보기 - 테스트
+        document.getElementById('버튼').addEventListener('click', function(){
+            setTimeout(function(){console.log(this)}, 1000);
         });
     </script>
 </body>
