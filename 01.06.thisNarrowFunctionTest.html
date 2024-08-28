@@ -34,6 +34,22 @@
 
         자료.전부더하기();
 
+        // 2-2. 자료 오브젝트 중괄호 내 코드 작성 금지
+        var 자료02 = {
+            data02 : [1, 2, 3, 4, 5],
+        }
+        
+        자료02.전부더하기02 = function () {
+            let count = 0
+            this.data02.forEach((a)=>{
+                count += a
+            })
+            return console.log(count);
+        }
+    
+        
+        자료02.전부더하기02();
+
         // 3. setTimeout 이용해보기
         document.getElementById('버튼').addEventListener('click', function(){
             setTimeout(()=>{console.log(this.innerHTML)}, 1000);
