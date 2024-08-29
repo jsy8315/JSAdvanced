@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+
+    </div>
+    <script>
+        // 변수의 Hoisting 현상
+
+        console.log(나이);
+
+        var 나이 = 30;
+
+        console.log(나이); //위의 나이는 호이스팅됐기 때문에, undefined라고 나옴
+
+        //변수 동시에 여려개 만들기
+        var 나이 = 20, 이름 = "Jung", 성별;
+
+        //전역변수 : 모든 곳에서 쓸 수 있는 변수
+
+        window.성별 = "M"; //이런식으로 쓰는게 더 권장됨
+
+        //연습문제
+        // 콘솔창에는 뭐가 나올까? 2가 나올거 같음 let은 범위가 {} 중괄호니까 그리고 var의 범위는 함수
+        if (true) {
+            let a = 1;
+            var b = 2;
+            if (true) {
+                let b = 3;
+            }
+            console.log(b)
+        }
+    </script>
+</body>
+</html>
