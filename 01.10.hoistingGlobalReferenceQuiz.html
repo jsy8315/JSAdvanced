@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <button id="btn">버튼</button>
+    </div>
+
+    <div style="display : none">모달창0</div>
+    <div style="display : none">모달창1</div>
+    <div style="display : none">모달창2</div>
+    
+    <button>버튼0</button>
+    <button>버튼1</button>
+    <button>버튼2</button>
+
+    <script>
+        // 문제1 
+        // 호이스팅은 "변수의 선언을 변수 범위의 맨 위로 끌고 오는 현상"이다
+        // let의 변수 범위는 중괄호 {}이고, 따라서 console.log위로 let = 안녕이 올라와, 
+        // undefined가 출력된다
+
+        // 문제2
+        // var의 변수 범위는 function이다 var 안녕은 마찬가지로 콘솔 위로 올라감..이어야하는데
+        // var 함수
+        // 함수();
+        // 함수 = function ... 이 될 것 같음
+        // 함수가 아닌데 함수()를 실행하라 했으므로 에러가 뜨게 된다
+
+        // 문제3
+        // let a 
+        // a = 1
+        // 근데 함수를 시행하지않음 -> 1이 출력됨
+
+        // 문제4
+        // 마지막 2줄이 전역변수이기 때문에 7이 출력된다
+
+        // 문제5
+        for (var j = 1; j < 6; j++) {
+            console.log(j);
+            setTimeout(function() {
+                console.log(j);
+            }, j * 1000);
+            console.log(j);
+        }
+
+        // 왜 숫자 6이 1초마다 5번 출력이 될까...
+        // 가설 1 : var일거 같은데.....
+        // 찾아보니 for문의 begin은 반복문에 진입할때 단 한번 실행된다
+
+        // 문제6
+        // var 버튼들 = document.querySelectorAll('button');
+        // var 모달창들 = document.querySelectorAll('div');
+            
+        // for (var i = 0; i < 3; i++){
+        
+        //   버튼들[i].addEventListener('click', function(){
+        //     모달창들[i].style.display = 'block';
+        //   });
+      
+        // }
+        //문제 5,6번은 같은 내용이다.
+        // 추정 가설 var로 선언된 변수는 범위가 함수이고, 
+    </script>
+</body>
+</html>
