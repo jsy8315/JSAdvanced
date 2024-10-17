@@ -7,51 +7,52 @@
 </head>
 <body>
     <script>
-        'use strict';
+        // 'use strict';
 
-        console.log("this는 window를 나타냄");
-        console.log("this01 : " + this);
+        // console.log("this는 window를 나타냄");
+        // console.log("this01 : " + this);
 
-        function 함수() {
-            console.log("ES6에서는 안됨");
-            console.log("this02 : " + this);
-        }
-        함수()
-        // 즉, this는 나를 담고 있는 오브젝트(그 함수를 가지고 있는 오브젝트)를 뜻함
-        window.함수(); 
+        // function 함수() {
+        //     console.log("ES6에서는 안됨");
+        //     console.log("this02 : " + this);
+        // }
+        // 함수()
+        // // 즉, this는 나를 담고 있는 오브젝트(그 함수를 가지고 있는 오브젝트)를 뜻함
+        // window.함수(); 
 
-        var 오브젝트01 = {
-            data : "kim", 
-            함수 : function() {
-                console.log("오브젝트01입니다");
-                console.log(this);
-            }
-        }
-        오브젝트01.함수();
+        // var 오브젝트01 = {
+        //     data : "kim", 
+        //     함수 : function() {
+        //         console.log("오브젝트01입니다");
+        //         console.log(this);
+        //     }
+        // }
+        // 오브젝트01.함수();
 
-        //오브젝트 안의 오브젝트에서 함수와 window를 쓰는 경우
-        var 오브젝트02 = {
-            data : {
-                함수 : function() {
-                    console.log("오브젝트02");
-                    console.log(this);
-                }
-            }
-        }
-        오브젝트02.data.함수();
+        // //오브젝트 안의 오브젝트에서 함수와 window를 쓰는 경우
+        // var 오브젝트02 = {
+        //     data : {
+        //         함수 : function() {
+        //             console.log("오브젝트02");
+        //             console.log(this);
+        //         }
+        //     }
+        // }
+        // 오브젝트02.data.함수();
 
-        //arrow function을 사용하는 경우
-        var 오브젝트03 = {
-            data : {
-                함수 : () => {
-                    console.log("오브젝트03");
-                    console.log(this);
-                }
-            }
-        }
-        오브젝트03.data.함수();
+        // //arrow function을 사용하는 경우
+        // var 오브젝트03 = {
+        //     data : {
+        //         함수 : () => {
+        //             console.log("오브젝트03");
+        //             console.log(this);
+        //         }
+        //     }
+        // }
+        // 오브젝트03.data.함수();
 
         // 즉, this는 나를 담고 있는 오브젝트(그 함수를 가지고 있는 오브젝트)를 뜻함
     </script>
+    <script src="01.03.this01.js"></script>
 </body>
 </html>
