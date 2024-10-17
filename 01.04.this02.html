@@ -14,61 +14,62 @@
     <button id="버튼03">버튼03</button>
 
     <script>
-        // constructor 기계 내에서 사용하는 경우
-        var 어쩌구저쩌구 = {};
+        // // constructor 기계 내에서 사용하는 경우
+        // var 어쩌구저쩌구 = {};
 
-        //constructor
-        function 기계() {
-            this.이름 = 'kim';
-        }
+        // //constructor
+        // function 기계() {
+        //     this.이름 = 'kim';
+        // }
 
-        var 오브젝트 = new 기계();
+        // var 오브젝트 = new 기계();
 
-        // 이벤트리스너 내에서 사용하는 경우
-        document.getElementById('버튼').addEventListener('click', 
-            function(e){
-                console.log(this);   //e.currentTarget
-                console.log(e.currentTarget);
-            }
-        )
+        // // 이벤트리스너 내에서 사용하는 경우
+        // document.getElementById('버튼').addEventListener('click', 
+        //     function(e){
+        //         console.log(this);   //e.currentTarget
+        //         console.log(e.currentTarget);
+        //     }
+        // )
 
-        // 특수한 경우(이벤트 리스너 내에서 콜백함수를 쓰는 경우)
-        document.getElementById('버튼02').addEventListener('click', 
-            function(e){
-                var 어레이 = [1,2,3];
-                어레이.forEach(function(a, i){
-                    console.log(this);
-                });
-            }
-        )
+        // // 특수한 경우(이벤트 리스너 내에서 콜백함수를 쓰는 경우)
+        // document.getElementById('버튼02').addEventListener('click', 
+        //     function(e){
+        //         var 어레이 = [1,2,3];
+        //         어레이.forEach(function(a, i){
+        //             console.log(this);
+        //         });
+        //     }
+        // )
 
-        //오브젝트 내에서 콜백함수를 쓰는 경우
-        var 오브젝트03 = {
-            이름들 : ["김", "이", "박"],
-            함수 : function(){
-                console.log(this);
-                console.log("-------------");
-                오브젝트03.이름들.forEach(function(){
-                    console.log(this);
-                })
-            }
-        }
+        // //오브젝트 내에서 콜백함수를 쓰는 경우
+        // var 오브젝트03 = {
+        //     이름들 : ["김", "이", "박"],
+        //     함수 : function(){
+        //         console.log(this);
+        //         console.log("-------------");
+        //         오브젝트03.이름들.forEach(function(){
+        //             console.log(this);
+        //         })
+        //     }
+        // }
         
-        오브젝트03.함수();
+        // 오브젝트03.함수();
 
-        //오브젝트 내에서 콜백함수를 쓰는 경우 - arrow function을 쓴다면
-        var 오브젝트04 = {
-            이름들 : ["김", "이", "박"],
-            함수 : function(){
-                console.log(this);
-                console.log("-------------");
-                오브젝트04.이름들.forEach(() =>{
-                    console.log(this);
-                })
-            }
-        }
+        // //오브젝트 내에서 콜백함수를 쓰는 경우 - arrow function을 쓴다면
+        // var 오브젝트04 = {
+        //     이름들 : ["김", "이", "박"],
+        //     함수 : function(){
+        //         console.log(this);
+        //         console.log("-------------");
+        //         오브젝트04.이름들.forEach(() =>{
+        //             console.log(this);
+        //         })
+        //     }
+        // }
         
-        오브젝트04.함수();
+        // 오브젝트04.함수();
     </script>
+    <script src="01.04.this02.js"></script>
 </body>
 </html>
