@@ -6,10 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    <div>
-        <button id="btn">버튼</button>
-    </div>
-
     <div style="display : none">모달창0</div>
     <div style="display : none">모달창1</div>
     <div style="display : none">모달창2</div>
@@ -40,13 +36,13 @@
         // 마지막 2줄이 전역변수이기 때문에 7이 출력된다
 
         // 문제5
-        for (var j = 1; j < 6; j++) {
-            console.log(j);
-            setTimeout(function() {
-                console.log(j);
-            }, j * 1000);
-            console.log(j);
-        }
+        // for (var j = 1; j < 6; j++) {
+        //     console.log(j);
+        //     setTimeout(function() {
+        //         console.log(j);
+        //     }, j * 1000);
+        //     console.log(j);
+        // }
 
         // 왜 숫자 6이 1초마다 5번 출력이 될까...
         // 가설 1 : var일거 같은데.....
@@ -66,5 +62,6 @@
         //문제 5,6번은 같은 내용이다.
         // 추정 가설 for문 안에 함수가 있으면 나중에 처리된다 > i가 다 증가하고 for문이 진행됨, let으로 바꾸면 해결됨
     </script>
+    <script src="01.10.hoistingGlobalReferenceQuiz.js"></script>
 </body>
 </html>
