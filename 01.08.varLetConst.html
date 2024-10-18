@@ -10,37 +10,38 @@
 
     </div>
     <script>
-        //var : 재선언ㅇ, 재할당ㅇ, 범위 function
-        var 이름 = "Jung";
-        이름 = "Park";
+        // //var : 재선언ㅇ, 재할당ㅇ, 범위 function
+        // var 이름 = "Jung";
+        // 이름 = "Park";
 
-        //let : 재선언x, 재할당ㅇ, 범위 { }
-        let 이름02 = "Jung";
-        // let 이름02 = "SUng";
+        // //let : 재선언x, 재할당ㅇ, 범위 { }
+        // let 이름02 = "Jung";
+        // // let 이름02 = "SUng";
 
-        //let : 재선언x, 재할당x, 범위 { }
-        const 이름03 = "Jung";
-        // 이름03 = "Kung";
+        // //let : 재선언x, 재할당x, 범위 { }
+        // const 이름03 = "Jung";
+        // // 이름03 = "Kung";
 
-        // 재할당 불가능한 불변의 object를 만들려면
-        const people = { name : "Jung"}
+        // // 재할당 불가능한 불변의 object를 만들려면
+        // const people = { name : "Jung"}
 
-        Object.freeze(people); //
-        people.name = "Kim" //재선언, 재할당한 게 아니므로 오류x(freeze 쓰지 않는 이상)
+        // Object.freeze(people); //
+        // people.name = "Kim" //재선언, 재할당한 게 아니므로 오류x(freeze 쓰지 않는 이상)
 
-        function 함수() {
-            var 이름04 = "kim";
-            let 이름05 = "JJung";
-        }
+        // function 함수() {
+        //     var 이름04 = "kim";
+        //     let 이름05 = "JJung";
+        // }
 
-        // console.log(이름04); //오류남
+        // // console.log(이름04); //오류남
 
-        if (true) {
-            let 이름06 = "Jung";
-        }
+        // if (true) {
+        //     let 이름06 = "Jung";
+        // }
 
-        console.log(이름06);
+        // console.log(이름06);
         
     </script>
+    <script src="01.08.varLetConst.js"></script>
 </body>
 </html>
