@@ -16,10 +16,10 @@ var a2 = `Hi Im Super ${문자2} 경배ㄱㄱ 내가 누구? ${문자2}`
 
 // 3. backquote 문자열 + 함수 tagged literal
 // 문자를 해체할 수 있음
-function 해체분석기(문자들, 변수들, 변수들2){
+function 해체분석기(문자들, ...변수들){
     console.log(문자들);
-    console.log(변수들);
-    console.log(변수들2);
+    console.log(변수들[0]);
+    console.log(변수들[1]);
 }
 
 해체분석기`Hi Im Super ${문자2} 경배ㄱㄱ 내가 누구? ${문자2}`
