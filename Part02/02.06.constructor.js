@@ -34,3 +34,19 @@ console.log(학생2);
 // this : 기계에서 새로 생성되는 object(instance)
 // 기계 : object 생성기계(constructor, 생성자)
 
+// 연습문제01, 02
+function Product(name, price){
+    this.name = name;
+    this.price = price;
+    this.부가세 = function(){
+        console.log(price * 0.1)
+    }
+}
+
+let product01 = new Product('shirt', 50000);
+let product02 = new Product('pants', 60000);
+console.log(product01);
+console.log(product02);
+product01.부가세()
+
+
