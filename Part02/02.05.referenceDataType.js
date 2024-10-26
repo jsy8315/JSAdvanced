@@ -33,3 +33,4 @@ console.log(name01); // 'kim' 출력, 변경이 되지 않음
 // name01 -> { name : 'kim' }
 // obj -> { name : 'park' }, 다른 메모리 주소를 가리킴
 
+// 따라서 name01은 변화 없음
