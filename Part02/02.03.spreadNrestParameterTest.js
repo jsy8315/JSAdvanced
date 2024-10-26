@@ -56,21 +56,40 @@
 // 정렬('bear');
 
 // 08. 데이터마이닝 기능 만들기
+// 내 코드
 // function 글자세기(a){
 
 //     let element = [...a].sort()
-//     console.log(element[0])  
 //     let result = {}
-//     let k = element[0]
-//     result.k = 0
-//     console.log(result)
-//     for(let i = 0; i < element.length; i++){
-//         if(element[i - 1] == element[i]){
+//     let firstEle = element[0]
+//     result[firstEle] = 1;
 
+//     for(let i = 1; i < element.length; i++){
+//         if (element[i - 1] == element[i]){
+//             result[element[i]]++
 //         } else {
-
+//             result[element[i]] = 1;
 //         }
 //     }
+
+//     return console.log(result);
+// }
+// 글자세기('aacbbb')
+// 글자세기('dbsrerberbebj');
+
+// function 글자세기02(글){
+
+//     var 결과 = {};
+//     [...글].forEach(function(a){
+//         if( 결과[a] > 0){
+//             결과[a]++
+//         } else {
+//             결과[a] = 1
+//         }
+//     }
+//     )
+
+//     console.log(결과)
 // }
 
-// 글자세기('aacbbb');
+// 글자세기02('aacbbb')
