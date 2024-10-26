@@ -23,9 +23,11 @@ var person2 = {
 }
 
 //안사 메서드를 기깔나게 만들어서, person2에도 적용시키고 싶음
-person.인사();
-person.인사.apply(person2);
-
+person.인사(); //undefined HI
+person.인사.apply(person2); // SonHM HI 
+console.log("---------------")
 // call
+
 person.인사.apply(person2, [1, 2]); //apply는 파라미터를 array형태로 집어넣기 가능
+// 
 person.인사.call(person2, 1, 2);

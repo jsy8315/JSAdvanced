@@ -22,7 +22,7 @@ function sumFunc3(a, b = 임시함수() ){
     console.log(a + b);
 }
 
-sumFunc3(35)
+sumFunc3(35) // 45
 
 // 함수의 arguments
 // 모든 파라미터를 한꺼번에 싸잡아서 다루고 싶을 경우 -> arguments
