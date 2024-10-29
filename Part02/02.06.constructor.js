@@ -28,8 +28,8 @@ var 학생1 = new 기계('Jung', 100); // 이러면 object 뽑힘
 var 학생2 = new 기계('Kkook', 50);
 console.log(학생1);
 console.log(학생2);
-학생1.sayHi();
-학생2.sayHi();
+학생1.sayHi(); // Hi Jung ㅋㅋ
+학생2.sayHi(); // Hi Kkook ㅋㅋ
 
 // this : 기계에서 새로 생성되는 object(instance)
 // 기계 : object 생성기계(constructor, 생성자)
