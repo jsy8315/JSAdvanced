@@ -31,6 +31,6 @@ var 부모 = { name : "Jung" };
 var 자식 = {}; 
 
 자식.__proto__ = 부모; // 내 부모유전자는 이걸로 해주세용~, 근데 실제로 쓰지는 않음
-console.log(자식.name);
+console.log(자식.name); // Jung
 
 
