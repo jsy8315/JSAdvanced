@@ -6,8 +6,10 @@ class 강아지 {
         this.type = 타입;
         this.color = 색;
         // 자식까지감
-        this.한살먹기02 = function(){
-            this.age++;
+        if( this instanceof 고양이){
+            this.한살먹기02 = function(){
+                this.age++;
+            }
         }
     }
     한살먹기01(){
@@ -31,14 +33,15 @@ var 고양이1 = new 고양이('코숏', '태비', 5); // {type: '코숏', color
 
 // 03.고양이와 강아지 object들에 기능을 하나 추가하고 싶습니다. 
 // 강아지 class로부터 생성된 오브젝트가 사용되면 에러를, 고양이 class로부터 생성된 오브젝트가 사용될떄 기능이 실행되어야함
+// -> instanceof라는 연산자를 사용해야함
 
 //  에러 발생해야함
 강아지1.한살먹기01(); 
 강아지1.한살먹기02();
 console.log(강아지1.age) // NaN
 // 기능 작동
-고양이1.한살먹기01();
-고양이1.한살먹기02();
+고양이1.한살먹기01();   // 한살씩 먹음
+고양이1.한살먹기02();   // 한살씩 먹음
 
 // 04. getter/setter를 이용해봅시다
 class Unit{
@@ -65,11 +68,11 @@ let 용병2 = new Unit(10, 200);
 용병2.heal = 100;
 
 // 05. getter/setter를 이용해봅시다2 
-
 // (1) data 오브젝트안에 setter 역할 함수를 하나 만들어보십시오. 
 var data = {
     odd : [],
     even : [],
+
     setter함수(...inputArray){
         for(let a = 0; a < inputArray.length; a++) {
             if(inputArray[a] % 2 == 1){
@@ -78,16 +81,23 @@ var data = {
                 this.even.push(inputArray[a])
             }
         }
+        // 추가
+        // forEach 문을 쓰고, this.odd.push를 썼을때 안되는 이유
+        // forEach는 근본없는 콜백함수기 때문에, (일반함수이기 때문에)
+        // this가 window를 가리킨다
     }, 
+
     get getter함수(){
-        let result = []
-        this.odd.forEach(function(a){
-            result.push(a)
-        })
-        this.even.forEach(function(a){
-            result.push(a)
-        })
-        return result.sort();
+        // 밑에 코드도 좋지만, 배운 spread operator를 사용하자
+        // let result = []
+        // this.odd.forEach(function(a){
+        //     result.push(a)
+        // })
+        // this.even.forEach(function(a){
+        //     result.push(a)
+        // })
+        // return result.sort();
+        return [ ...this.odd, ...this.even ].sort()
     }
   }
 
