@@ -6,10 +6,11 @@ class 강아지 {
         this.type = 타입;
         this.color = 색;
         // 자식까지감
-        if( this instanceof 고양이){
-            this.한살먹기02 = function(){
+        this.한살먹기02 = function(){
+            if (this instanceof 고양이){
                 this.age++;
             }
+            this.age++;
         }
     }
     한살먹기01(){
