@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <script src="03.02.importExport.js"></script> -->
+    <script type="module">
+        // Js에 있는 모든 내용을 가져오진 않음
+        import 작명가능변수 from '/Part03/03.02.importExport.js'; 
+        // 작명가능변수 부분은 작명 가능(export default한 경우에만, export default는 파일당 1회만 사용가능)
+        console.log(작명가능변수) // 10
+
+        // 여러개 가져오기, export default와 동시에 사용가능
+        // 작명 불가능, 그대로 가져와야함
+        import {b, c} from '/Part03/03.02.importExport.js';
+        console.log(b); // 20
+        console.log(c); // 30
+
+        // 이런식으로 동시에도 가능
+        // import 작명가능변수, {b, c} from '/Part03/03.02.importExport.js';
+
+        // 변수명을 새로 짓고 싶은 경우
+        import {d as 새로지은d별명} from '/Part03/03.02.importExport.js';
+        console.log(새로지은d별명);  // 40
+
+        // * : 전부다 import 해오겠음
+        import 디폴트, * as 전부import해오겠음 from '/Part03/03.02.importExport.js';
+        console.log(전부import해오겠음); 
+        // Module {Symbol(Symbol.toStringTag): 'Module'} ...(생략)
+        console.log(전부import해오겠음.b); // 20
+        console.log(전부import해오겠음.a); // undefined, 디폴트인 경우 따로
+        console.log(디폴트); // 10
+
+        // 옛날 방식 : var 변수 = require('경로')
+        // var 임포트해온것들ㄹ = require('/Part03/03.02.importExport.js')
+        
+    </script>
+</body>
+</html>
