@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="test" src="https://codingapple1.github.io/kona.jpg"> 
+    <script src="03.06.promiseTest.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> 
+    <script>
+        // Q2. Ajax 요청이 성공하면 무언가 코드를 실행하고 싶습니다. 
+        $.ajax({
+            type : 'GET',
+            url : 'https://codingapple1.github.io/hello.txt'
+        }).done(function(결과02){
+            console.log('결과02 : ' + 결과02)
+        });
+
+        // Q3. Promise chaining 
+        // then()에서 new Promise()를 배출하면 뒤에 또 then을 쓸 수 있다
+        let promiseTest02 = new Promise(function(resolve, reject){
+            $.get('https://codingapple1.github.io/hello.txt')
+            .done(function(결과03){
+                resolve(결과03);
+            })
+        })
+
+        promiseTest02.then(function(결과03){
+            console.log('성공03~ : ' + 결과03);
+            
+            // hello2.txt를 요청
+            let promiseTest03 = new Promise(function(resolve, reject){
+            $.get('https://codingapple1.github.io/hello2.txt').done(function(결과0302){
+                resolve(결과0302);
+            })})
+            return promiseTest03
+        
+        // hello2.txt 요청 성공하며 이거 실행
+        }).then(function(결과0302){
+            console.log('성공0302~ : ' + 결과0302);
+        })
+
+
+
+        
+        // Promise chaining test
+        let promiseTest04 = new Promise(function(resolve, reject){
+            setTimeout(function(){
+                console.log('Hi setTimeout01')
+            }, 1000)
+            resolve();
+        })
+
+        promiseTest04.then(function(){
+            console.log('setTImeout test01');
+            
+            let promiseTest05 = new Promise(function(resolve, reject){
+                setTimeout(function(){
+                    console.log('Hi setTimeout02')
+                }, 1000)
+                resolve();
+            });
+
+            return promiseTest05
+
+        }).then(function(){
+            console.log('setTImeout test02');
+        })
+
+    </script>
+</body>
+</html>
