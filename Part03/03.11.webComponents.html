@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 03.11.Web Components : 커스텀 HTML 태그 만들기 -->
+    <!-- web components 기능 쓰면 긴 HTML도 함수처럼 재사용 가능, 근데 리액트, 뷰가 더 잘함, 라이브러리도 많음(Lit, Stencil 등-->
+    <custom-input name="비번3"></custom-input>
+    <custom-input name="이메일"></custom-input>
+    <script>
+        class 클래스 extends HTMLElement {
+            connectedCallback(){ 
+                // 만든 태그가 HTML에 정착될 때 실행할 코드 적는 곳
+                // let 변수 = document.createElement('label');
+                // this.appendChild(변수); // html 생성속도 빨라짐, 밑에껀 10배정도 느림
+                let name = this.getAttribute('name');
+                this.innerHTML = `<label>${name}인풋이에용<label><input>`
+                // this : 새로 생성될 <custom-input> 요소
+            }
+            // name이라는 attribute가 바뀌는지 감시해주세요
+            // (attribute 변경할때마다 html 재렌더링하고 싶음)
+            static get observedAttributes(){
+                return ['name']
+            }
+            // 바뀌면 이거 실행해줌
+            attributeChangedCallback(){
+                console.log(this.getAttribute('name'))
+            }
+        }
+        customElements.define('custom-input', 클래스)
+    </script>
+    <script src="03.11.webComponents.js"></script>
+</body>
+</html>
