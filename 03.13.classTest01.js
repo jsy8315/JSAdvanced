@@ -56,10 +56,12 @@ function 프레임마다실행할거임(){ // 1초에 60번 코드 실행해야�
         let cactus01 = new Cactus();
         cactuses.push(cactus01);
     }
+
     cactuses.forEach(function(a){
         a.x--;
         a.draw();
     })
+    
     dino.draw();
 }
 
