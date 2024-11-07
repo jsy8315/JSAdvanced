@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 본격적으로 들어가기 전에 range부터 보고가자 -->
+        <input type="range">
+        <!-- 여러개 겹쳐서 만들었음, 개발자 도구에서 열어보면 shadow-root 안에 숨겨져 있음 -->
+
+    <div id="mordor"></div>
+    <custom-input></custom-input><br>
+    <custom-input></custom-input>
+
+    <!-- 임시 HTML 보관함인 <template> -->
+    <template id="template01">
+        <label>인풋이에용<label><input>
+        <style>label { color : red }</style>
+    </template>
+
+    <script>
+        document.querySelector('#mordor').attachShadow({mode : 'open'});
+        document.querySelector('#mordor').shadowRoot.innerHTML = 
+        `<p>심연에서 내가 왔게 안왔게</p>` 
+        // shadow-root (open) -> <p>심연에서 내가 왔게 안왔게</p> 으로 콘솔창에 나옴
+
+        // 왜 쓰냐? Web components + shadow DOM = 완벽한 HTML모듈화
+        // 저번시간에 배웠던 Web component
+        class 클래스 extends HTMLElement {
+            connectedCallback(){ 
+                let name = this.getAttribute('name');
+                this.attachShadow({ mode : 'open' });
+
+                // shadowDom에 넣으면 영향x, template라는 임시저장소 활용하기
+                this.shadowRoot.append(template01.content.cloneNode(true))
+                
+                // addEventListener도 가능함
+                let el = this.shadowRoot.querySelector('label');
+                el.addEventListener('click', function(){
+                    console.log('clickclick')
+                })
+            }
+        }
+        customElements.define('custom-input', 클래스)
+    </script>
+    <script src="03.12.shadowDom.js"></script>
+</body>
+</html>
